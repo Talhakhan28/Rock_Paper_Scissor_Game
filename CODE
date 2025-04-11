@@ -82,7 +82,7 @@ namespace Rock__Paper___Scissor
                         }
                         break;
 
-                    case "Scissor":
+                    case "scissor":
                         if (computer == "rock")
                         {
                             Console.WriteLine("you Loose");
