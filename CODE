@@ -1,0 +1,123 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Rock__Paper___Scissor
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            Random random = new Random();
+            bool playagain = true;
+            string player;
+            string computer;
+            string answer;
+
+            while (playagain)
+            {
+                 player = "";
+                computer = "";
+                answer = "";
+
+                while (player !="rock" && player != "paper" && player != "scissor")
+                {
+                    Console.WriteLine("Enter Rock, Paper or Scissor\n" + "Give the correct spelling!");
+                    player = Console.ReadLine();
+                    player = player.ToLower();
+                }
+                switch (random.Next(1,4))
+                {
+                    case 1:
+                        
+                            computer = "rock";
+                            break;
+                    case 2:
+                        computer = "paper";
+                        break;
+
+                    case 3:
+                        computer = "scissor";
+                            break;
+
+                }
+                Console.WriteLine("Player:" + player);
+                Console.WriteLine("Computer:" + computer);
+
+                switch (player)
+                {
+                    case "rock":
+                        if (computer == "rock") 
+                        {
+                            Console.WriteLine("Its a Draw" ); 
+                        }
+                        else if(computer == "paper")
+                        {
+                            Console.WriteLine("You Won");
+                        }
+
+                        else
+                        
+                        {
+                            Console.WriteLine("You Won");
+                        }
+                        break;
+
+                    case "paper":
+                        if (computer == "rock")
+                        {
+                            Console.WriteLine("you Won");
+                        }
+                        else if (computer == "paper")
+                        {
+                            Console.WriteLine("Its A draw");
+                        }
+
+                        else
+
+                        {
+                            Console.WriteLine("You loose");
+                        }
+                        break;
+
+                    case "Scissor":
+                        if (computer == "rock")
+                        {
+                            Console.WriteLine("you Loose");
+                        }
+                        else if (computer == "paper")
+                        {
+                            Console.WriteLine("You Won");
+                        }
+
+                        else
+
+                        {
+                            Console.WriteLine("Its a Draw");
+                        }
+                        break;
+                }
+                Console.Write("Would you like to play again (Y/N): ");
+                answer = Console.ReadLine();
+                answer = answer.ToUpper();
+
+                if (answer == "Y")
+                {
+                    playagain = true;
+                }
+                else
+                {
+                    playagain = false;
+                }
+
+            }
+
+            Console.WriteLine("Thanks for playing!");
+
+            Console.ReadKey();
+        }
+        }
+    }
+
